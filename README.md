@@ -5,7 +5,7 @@
 [![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/pedroalbanese/anubiscrypt)](https://golang.org)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pedroalbanese/anubiscrypt)](https://github.com/pedroalbanese/anubiscrypt/releases)  
 
-Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated encryption (confidentiality and authentication) and the ability to check the integrity and authentication of additional authenticated data (AAD) that is sent in the clear..
+Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated encryption (confidentiality and authentication) and the ability to check the integrity and authentication of additional authenticated data (AAD) that is sent in the clear.
 ### Command-line Anubis-EAX Encryption Tool
 <pre>anubiscrypt [-d] [-b N] -p "pass" [-i N] [-s "salt"] -f <file.ext>
   -b int
