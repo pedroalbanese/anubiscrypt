@@ -10,8 +10,6 @@ Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated en
 <pre>anubiscrypt [-d] [-b N] -p "pass" [-i N] [-s "salt"] -f <file.ext>
   -b int
         Key length: 128, 192 or 256. (default 256)
-  -c string
-        Cipher: AES, RC6, Twofish or Serpent. (default "aes")
   -d    Decrypt instead Encrypt.
   -f string
         Target file. ('-' for STDIN)
