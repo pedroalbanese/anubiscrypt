@@ -30,4 +30,4 @@ Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated en
 
 This project is licensed under the ISC License.
 
-##### Industril-Grade Reliability. Copyright (c) 2020-2022 ALBANESE Research Lab.
+##### Industrial-Grade Reliability. Copyright (c) 2020-2022 ALBANESE Research Lab.
