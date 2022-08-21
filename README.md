@@ -14,7 +14,7 @@ Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated en
   -f string
         Target file. ('-' for STDIN)
   -i int
-        Iterations. (for PBKDF2) (default 1024)
+        Iterations. (for PBKDF2) (default 1)
   -k string
         Symmetric key to Encrypt/Decrypt.
   -m    Cipher-based message authentication code.
