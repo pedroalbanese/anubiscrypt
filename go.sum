@@ -5,12 +5,12 @@ github.com/pedroalbanese/cmac v0.0.0-20210429130952-a58975ec8f4c/go.mod h1:5AAl1
 github.com/pedroalbanese/edgetk/eax v0.0.0-20220804183420-98b1c1de72be h1:G6pL7fgJkuP78guD895AVKyi5sL6ZKSsmAe3hyTp3+4=
 github.com/pedroalbanese/edgetk/eax v0.0.0-20220804183420-98b1c1de72be/go.mod h1:UlvrV2QWWBphQq19205Swel/YhKQChSusWJHDbP+SRY=
 github.com/pedroalbanese/edgetk/ocb v0.0.0-20211030191647-f8a58b6f3737/go.mod h1:Xi4oEai90bB2kcsQWcvKvdo4R929dwl0enqezooyvNo=
+github.com/pedroalbanese/whirlpool v0.0.0-20201016144138-0675e54bb004 h1:C+a7tNE25jByW7JE7bvt/X+x/D61GHfwR1O/MVs3MjU=
+github.com/pedroalbanese/whirlpool v0.0.0-20201016144138-0675e54bb004/go.mod h1:hmEg12nLjNeVJaroqA6z3wubkSxGRVohaAD4cNuysRg=
+golang.org/x/crypto v0.0.0-20210921155107-089bfa567519 h1:7I4JAnoQBe7ZtJcBaYHi5UtiO8tQHbUSXxL+pnGRANg=
 golang.org/x/crypto v0.0.0-20210921155107-089bfa567519/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
-golang.org/x/crypto v0.0.0-20220817201139-bc19a97f63c8 h1:GIAS/yBem/gq2MUqgNIzUHW7cJMmx3TGZOrnyYaNQ6c=
-golang.org/x/crypto v0.0.0-20220817201139-bc19a97f63c8/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=
 golang.org/x/net v0.0.0-20210226172049-e18ecbb05110/go.mod h1:m0MpNAwzfU5UDzcl9v0D8zg8gWTRqZa9RBIspLL5mdg=
 golang.org/x/net v0.0.0-20211029224645-99673261e6eb/go.mod h1:9nx3DQGgdP8bBQD5qxJ1jj9UTztislL4KSBs9R2vV5Y=
-golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2/go.mod h1:9nx3DQGgdP8bBQD5qxJ1jj9UTztislL4KSBs9R2vV5Y=
 golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210423082822-04245dca01da/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
