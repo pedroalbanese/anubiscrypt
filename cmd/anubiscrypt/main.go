@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"crypto/cipher"
 	"crypto/rand"
-	"crypto/sha256"
 	"encoding/hex"
 	"flag"
 	"fmt"
@@ -16,12 +15,14 @@ import (
 	"github.com/dgryski/go-anubis"
 	"github.com/pedroalbanese/cmac"
 	"github.com/pedroalbanese/edgetk/eax"
+	"github.com/pedroalbanese/whirlpool"
 )
 
 var (
+	aad    = flag.String("a", "", "Additional Associated data.")
 	dec    = flag.Bool("d", false, "Decrypt instead Encrypt.")
 	file   = flag.String("f", "", "Target file. ('-' for STDIN)")
-	iter   = flag.Int("i", 1024, "Iterations. (for PBKDF2)")
+	iter   = flag.Int("i", 1, "Iterations. (for PBKDF2)")
 	key    = flag.String("k", "", "Symmetric key to Encrypt/Decrypt.")
 	length = flag.Int("b", 256, "Key length: 128, 192 or 256.")
 	mac    = flag.Bool("m", false, "Cipher-based message authentication code.")
@@ -55,12 +56,12 @@ func main() {
 	}
 
 	var keyHex string
-	var prvRaw []byte
+	var keyRaw []byte
 
 	if *mac {
 		if *pbkdf != "" {
-			prvRaw = pbkdf2.Key([]byte(*pbkdf), []byte(*salt), *iter, 16, sha256.New)
-			keyHex = hex.EncodeToString(prvRaw)
+			keyRaw = pbkdf2.Key([]byte(*pbkdf), []byte(*salt), *iter, 16, whirlpool.New)
+			keyHex = hex.EncodeToString(keyRaw)
 		} else {
 			keyHex = *key
 		}
@@ -82,8 +83,8 @@ func main() {
 		os.Exit(0)
 	} else {
 		if *pbkdf != "" {
-			prvRaw = pbkdf2.Key([]byte(*pbkdf), []byte(*salt), *iter, *length/8, sha256.New)
-			keyHex = hex.EncodeToString(prvRaw)
+			keyRaw = pbkdf2.Key([]byte(*pbkdf), []byte(*salt), *iter, *length/8, whirlpool.New)
+			keyHex = hex.EncodeToString(keyRaw)
 		} else {
 			keyHex = *key
 		}
@@ -123,7 +124,7 @@ func main() {
 		if *dec == false {
 			nonce := make([]byte, aead.NonceSize(), aead.NonceSize()+len(msg)+aead.Overhead())
 
-			out := aead.Seal(nonce, nonce, msg, nil)
+			out := aead.Seal(nonce, nonce, msg, []byte(*aad))
 			fmt.Printf("%s", out)
 
 			os.Exit(0)
@@ -132,7 +133,7 @@ func main() {
 		if *dec == true {
 			nonce, msg := msg[:aead.NonceSize()], msg[aead.NonceSize():]
 
-			out, err := aead.Open(nil, nonce, msg, nil)
+			out, err := aead.Open(nil, nonce, msg, []byte(*aad))
 			if err != nil {
 				log.Fatal(err)
 			}
