@@ -7,7 +7,7 @@
 
 Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated encryption (confidentiality and authentication) and the ability to check the integrity and authentication of additional authenticated data (AAD) that is sent in the clear.
 ### Command-line Anubis-EAX Encryption Tool
-<pre>anubiscrypt [-d] [-b N] -p "pass" [-i N] [-s "salt"] -f <file.ext>
+<pre>anubiscrypt [-d] [-b N] -p "pass" [-i N] [-s "salt"] -f &lt;file.ext&gt;
   -b int
         Key length: 128, 192 or 256. (default 256)
   -d    Decrypt instead Encrypt.
