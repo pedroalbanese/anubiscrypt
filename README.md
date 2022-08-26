@@ -8,11 +8,10 @@
 Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated encryption (confidentiality and authentication) and the ability to check the integrity and authentication of additional authenticated data (AAD) that is sent in the clear. Whirlpool-based PBKDF2. Anubis is a block cipher with SP-network structure designed by Vincent Rijmen and Paulo S. L. M. Barreto in 2000.
 
 ### Command-line Anubis-EAX Encryption Tool
-<pre>anubiscrypt [-d] [-b N] -p "pass" [-i N] [-s "salt"] -f &lt;file.ext&gt;
+<pre>Usage of anubiscrypt:
+anubiscrypt [-d] -p "pass" [-i N] [-s "salt"] -f <file.ext>
   -a string
         Additional Associated data.
-  -b int
-        Key length: 128, 192 or 256. (default 256)
   -d    Decrypt instead Encrypt.
   -f string
         Target file. ('-' for STDIN)
@@ -20,10 +19,9 @@ Barreto & Rijmen 128-bit block cipher in EAX Mode provides both authenticated en
         Iterations. (for PBKDF2) (default 1)
   -k string
         Symmetric key to Encrypt/Decrypt.
-  -m    Cipher-based message authentication code.
   -p string
         Password-based key derivation function 2.
-  -r    Generate random cryptographic key with given bit-length.
+  -r    Generate random cryptographic key with 128-bit.
   -s string
         Salt. (for PBKDF2)</pre>
 
