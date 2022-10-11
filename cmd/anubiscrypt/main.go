@@ -98,6 +98,10 @@ func main() {
 	if *dec == false {
 		nonce := make([]byte, aead.NonceSize(), aead.NonceSize()+len(msg)+aead.Overhead())
 
+		if _, err := io.ReadFull(rand.Reader, nonce); err != nil {
+			log.Fatal(err)
+		}
+
 		out := aead.Seal(nonce, nonce, msg, []byte(*aad))
 		fmt.Printf("%s", out)
 
