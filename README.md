@@ -1,6 +1,7 @@
 # AnubisCrypt
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/pedroalbanese/anubiscrypt/blob/master/LICENSE.md) 
 [![GoDoc](https://godoc.org/github.com/pedroalbanese/anubiscrypt?status.png)](http://godoc.org/github.com/pedroalbanese/anubiscrypt)
+[![GitHub downloads](https://img.shields.io/github/downloads/pedroalbanese/anubiscrypt/total.svg?logo=github&logoColor=white)](https://github.com/pedroalbanese/anubiscrypt/releases)
 [![Go Report Card](https://goreportcard.com/badge/github.com/pedroalbanese/anubiscrypt)](https://goreportcard.com/report/github.com/pedroalbanese/anubiscrypt)
 [![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/pedroalbanese/anubiscrypt)](https://golang.org)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pedroalbanese/anubiscrypt)](https://github.com/pedroalbanese/anubiscrypt/releases)  
