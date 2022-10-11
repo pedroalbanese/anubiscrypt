@@ -13,7 +13,6 @@ import (
 	"os"
 
 	"github.com/pedroalbanese/anubis"
-	"github.com/pedroalbanese/eax"
 	"github.com/pedroalbanese/whirlpool"
 )
 
@@ -33,7 +32,7 @@ func main() {
 
 	if len(os.Args) < 2 {
 		fmt.Fprintln(os.Stderr, "AnubisCrypt - ALBANESE Research Lab (c) 2020-2022 ")
-		fmt.Fprintln(os.Stderr, "Barreto & Rijmen 128-bit block cipher in EAX Mode\n")
+		fmt.Fprintln(os.Stderr, "Barreto & Rijmen 128-bit block cipher in GCM Mode\n")
 		fmt.Fprintln(os.Stderr, "Usage of "+os.Args[0]+":")
 		fmt.Fprintln(os.Stderr, os.Args[0]+" [-d] -p \"pass\" [-i N] [-s \"salt\"] -f <file.ext>")
 		flag.PrintDefaults()
@@ -90,8 +89,11 @@ func main() {
 	msg := buf.Bytes()
 
 	var c cipher.Block
-	c = anubis.New(key)
-	aead, _ := eax.NewEAX(c)
+	c, err = anubis.New(key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	aead, _ := cipher.NewGCMWithTagSize(c, 16)
 
 	if *dec == false {
 		nonce := make([]byte, aead.NonceSize(), aead.NonceSize()+len(msg)+aead.Overhead())
