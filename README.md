@@ -9,7 +9,7 @@ Barreto & Rijmen 128-bit block cipher with GCM Mode (RFC 5288) provides both aut
 
 ### Command-line Anubis-GCM Encryption Tool
 <pre>Usage of anubiscrypt:
-anubiscrypt [-d] -p "pass" [-i N] [-s "salt"] -f <file.ext>
+anubiscrypt [-d] -p "pass" [-i N] [-s "salt"] -f &lt;file.ext&gt;
   -a string
         Additional Associated data.
   -d    Decrypt instead Encrypt.
