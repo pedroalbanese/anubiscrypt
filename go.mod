@@ -3,8 +3,7 @@ module github.com/pedroalbanese/anubiscrypt
 go 1.12
 
 require (
-	github.com/pedroalbanese/anubis v0.0.0-beta
-	github.com/pedroalbanese/eax v0.0.0-20220826180322-27e4c16b7eac
-	github.com/pedroalbanese/whirlpool v0.0.0-20201016144138-0675e54bb004
-	golang.org/x/crypto v0.0.0-20220824171710-5757bc0c5503
+	github.com/pedroalbanese/anubis v0.0.0-gama
+	github.com/pedroalbanese/whirlpool v0.0.0-20220911221330-8ad94dd14447
+	golang.org/x/crypto v0.0.0-20221010152910-d6f0a8c073c2
 )
