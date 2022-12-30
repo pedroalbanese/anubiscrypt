@@ -28,8 +28,8 @@ anubiscrypt [-d] -p "pass" [-i N] [-s "salt"] -f &lt;file.ext&gt;
 
 #### Example:
 ```sh
-./gostcrypt -k "" -f plaintext.ext > ciphertext.ext
-./gostcrypt -d -k $256bitkey -f ciphertext.ext > plaintext.ext
+./anubiscrypt -k "" -f plaintext.ext > ciphertext.ext
+./anubiscrypt -d -k $128bitkey -f ciphertext.ext > plaintext.ext
 ```
 
 ## License
