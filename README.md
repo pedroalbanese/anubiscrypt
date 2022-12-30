@@ -26,6 +26,12 @@ anubiscrypt [-d] -p "pass" [-i N] [-s "salt"] -f &lt;file.ext&gt;
   -s string
         Salt. (for PBKDF2)</pre>
 
+#### Example:
+```sh
+./gostcrypt -k "" -f plaintext.ext > ciphertext.ext
+./gostcrypt -d -k $256bitkey -f ciphertext.ext > plaintext.ext
+```
+
 ## License
 
 This project is licensed under the ISC License.
