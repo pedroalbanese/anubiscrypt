@@ -80,11 +80,26 @@ func main() {
 
 	buf := bytes.NewBuffer(nil)
 	var data io.Reader
+	var size int64
 	if *file == "-" {
 		data = os.Stdin
+		fi, err := os.Stdin.Stat()
+		if err != nil {
+			log.Fatal(err)
+		}
+		size = fi.Size()
 	} else {
-		data, _ = os.Open(*file)
+		data, err = os.Open(*file)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fi, err := os.Stat(*file)
+		if err != nil {
+			log.Fatal(err)
+		}
+		size = fi.Size()
 	}
+	buf.Grow(int(size))
 	io.Copy(buf, data)
 	msg := buf.Bytes()
 
